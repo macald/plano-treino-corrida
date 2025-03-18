@@ -163,11 +163,11 @@ const PlanoTreino = () => {
 
   const getBadgeStatus = (concluido) => {
     if (concluido === 1) {
-      return <Badge className="bg-green-500">Concluído</Badge>;
+      return <Badge className="bg-green-500 text-white px-3 py-1">Concluído</Badge>;
     } else if (concluido === 0) {
-      return <Badge className="bg-red-500">Não concluído</Badge>;
+      return <Badge className="bg-red-500 text-white px-3 py-1">Não concluído</Badge>;
     } else {
-      return <Badge className="bg-yellow-500">Pendente</Badge>;
+      return <Badge className="bg-yellow-500 text-white px-3 py-1">Pendente</Badge>;
     }
   };
   
@@ -204,21 +204,19 @@ const PlanoTreino = () => {
       {treinoSelecionado && (
         <Card className="w-full shadow-lg">
           <CardHeader className="bg-slate-50">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <div>
-                <CardTitle className="text-2xl">
+                <CardTitle className="text-xl sm:text-2xl">
                   <span className="flex items-center gap-2">
-                    <Calendar size={20} />
+                    <Calendar className="h-5 w-5" />
                     {formatarData(treinoSelecionado.Data, treinoSelecionado.Dia)}
                   </span>
                 </CardTitle>
-                <CardDescription className="mt-1">
+                <CardDescription className="mt-1 text-sm">
                   Semana {treinoSelecionado.Semana}
                 </CardDescription>
               </div>
-              <div>
-                {getBadgeStatus(treinoSelecionado.Concluído)}
-              </div>
+              {getBadgeStatus(treinoSelecionado.Concluído)}
             </div>
           </CardHeader>
           
