@@ -163,11 +163,11 @@ const PlanoTreino = () => {
 
   const getBadgeStatus = (concluido) => {
     if (concluido === 1) {
-      return <Badge className="bg-green-500 text-white px-3 py-1">Concluído</Badge>;
+      return <Badge className="bg-green-500 text-white px-3 py-1 w-auto inline-flex">Concluído</Badge>;
     } else if (concluido === 0) {
-      return <Badge className="bg-red-500 text-white px-3 py-1">Não concluído</Badge>;
+      return <Badge className="bg-red-500 text-white px-3 py-1 w-auto inline-flex">Não concluído</Badge>;
     } else {
-      return <Badge className="bg-yellow-500 text-white px-3 py-1">Pendente</Badge>;
+      return <Badge className="bg-yellow-500 text-white px-3 py-1 w-auto inline-flex">Pendente</Badge>;
     }
   };
   
@@ -216,7 +216,9 @@ const PlanoTreino = () => {
                   Semana {treinoSelecionado.Semana}
                 </CardDescription>
               </div>
-              {getBadgeStatus(treinoSelecionado.Concluído)}
+              <div className="self-start">
+                {getBadgeStatus(treinoSelecionado.Concluído)}
+              </div>
             </div>
           </CardHeader>
           
