@@ -148,10 +148,34 @@ const PlanoTreino = () => {
   const [treinoSelecionado, setTreinoSelecionado] = useState(null);
 
   useEffect(() => {
-    // Seleciona a primeira data por padrão
     if (treinos.length > 0) {
-      setDataSelecionada(treinos[0].Data);
-      setTreinoSelecionado(treinos[0]);
+      // Converte a data atual para o formato DD/MM/YYYY
+      const hoje = new Date();
+      const dataAtual = hoje.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
+
+      // Procura o treino da data atual
+      let treinoAtual = treinos.find(t => t.Data === dataAtual);
+
+      // Se não encontrar treino para hoje, procura o próximo treino
+      if (!treinoAtual) {
+        treinoAtual = treinos.find(t => {
+          const [dia, mes, ano] = t.Data.split('/');
+          const dataTreino = new Date(ano, mes - 1, dia);
+          return dataTreino > hoje;
+        });
+      }
+
+      // Se não encontrar próximo treino, usa o primeiro treino da lista
+      if (!treinoAtual) {
+        treinoAtual = treinos[0];
+      }
+
+      setDataSelecionada(treinoAtual.Data);
+      setTreinoSelecionado(treinoAtual);
     }
   }, [treinos]);
 
