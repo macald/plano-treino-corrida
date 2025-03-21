@@ -28,7 +28,7 @@ const DADOS_TREINO = [
     "Principal": "4km a 7:10-7:30/km + 5km a 6:10-6:30/km",
     "Desaquecimento": "10 minutos de trote",
     "Objetivo": "Simular o fim de corrida, quando já estamos cansados mas precisamos manter o ritmo",
-    "Concluído": null
+    "Concluído": 1
   },
   {
     "Semana": 1,
