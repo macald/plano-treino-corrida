@@ -34,12 +34,12 @@ const DADOS_TREINO = [
     "Semana": 1,
     "Dia": "Sábado",
     "Data": "22/03/2025",
-    "Treino": "16km (6:40-7:00/km)",
+    "Treino": "16km (6:50-7:15/km)",
     "Aquecimento": "10 minutos de trote",
-    "Principal": "16km a 6:40-7:00/km",
+    "Principal": "16km a 6:50-7:15/km",
     "Desaquecimento": "10 minutos de trote",
     "Objetivo": "Desenvolver resistência aeróbica e acostumar-se com longas distâncias",
-    "Concluído": null
+    "Concluído": 1
   },
   {
     "Semana": 2,
@@ -67,9 +67,9 @@ const DADOS_TREINO = [
     "Semana": 2,
     "Dia": "Sábado",
     "Data": "29/03/2025",
-    "Treino": "18km (6:40-7:00/km)",
+    "Treino": "16-17km (6:50-7:15/km)",
     "Aquecimento": "10 minutos de trote",
-    "Principal": "18km a 6:40-7:00/km",
+    "Principal": "16-17km a 6:50-7:15/km",
     "Desaquecimento": "10 minutos de trote",
     "Objetivo": "Aumentar a resistência para aproximar-se da distância da meia maratona",
     "Concluído": null
@@ -91,7 +91,7 @@ const DADOS_TREINO = [
     "Data": "03/04/2025",
     "Treino": "10km progressivo",
     "Aquecimento": "1.5km de trote",
-    "Principal": "10km com aumento de ritmo: 2km (7:10/km), 2km (7:00/km), 2km (6:50/km), 2km (6:40/km), 2km (6:30/km)",
+    "Principal": "10km com aumento de ritmo: 2km (7:15/km), 2km (7:05/km), 2km (6:55/km), 2km (6:45/km), 2km (6:35/km)",
     "Desaquecimento": "10 minutos de trote",
     "Objetivo": "Simular estratégia de corrida com aumento progressivo de ritmo",
     "Concluído": null
@@ -100,9 +100,9 @@ const DADOS_TREINO = [
     "Semana": 3,
     "Dia": "Sábado",
     "Data": "05/04/2025",
-    "Treino": "19km (6:40-7:00/km)",
+    "Treino": "18km (6:50-7:15/km)",
     "Aquecimento": "10 minutos de trote",
-    "Principal": "19km a 6:40-7:00/km",
+    "Principal": "18km a 6:50-7:15/km",
     "Desaquecimento": "10 minutos de trote",
     "Objetivo": "Último longo antes do polimento, próximo à distância da prova",
     "Concluído": null
@@ -135,7 +135,7 @@ const DADOS_TREINO = [
     "Data": "13/04/2025",
     "Treino": "MEIA MARATONA - 21.1km",
     "Aquecimento": "10-15 minutos de trote leve e alongamentos dinâmicos",
-    "Principal": "Estratégia: primeiros 5km (7:00-7:10/km), 5-15km (6:50-7:00/km), últimos 6km (6:40-6:50/km ou mais rápido se possível)",
+    "Principal": "Estratégia: primeiros 5km (7:05-7:15/km), 5-15km (6:55-7:05/km), últimos 6km (6:40-6:50/km ou mais rápido se possível)",
     "Desaquecimento": "-",
     "Objetivo": "Completar a Meia Maratona de São Paulo",
     "Concluído": null
