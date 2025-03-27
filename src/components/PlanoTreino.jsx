@@ -50,7 +50,7 @@ const DADOS_TREINO = [
     "Principal": "9 repetições de (3 minutos a 6:10-6:30/km + 2 minutos a 7:10-7:30/km)",
     "Desaquecimento": "10 minutos de trote",
     "Objetivo": "Trabalhar resistência e capacidade de recuperação rápida",
-    "Concluído": null
+    "Concluído": 1
   },
   {
     "Semana": 2,
