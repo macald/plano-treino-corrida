@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Treinos Meia Maratona - Abril a Junho 2025</title>
+    <title>App Treinos Meia Maratona - Layout Otimizado</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
@@ -87,7 +87,7 @@
             cursor: pointer;
             transition: border-color 0.3s, box-shadow 0.3s;
             appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E7D32' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316b8b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 15px center;
             background-size: 16px;
@@ -96,7 +96,7 @@
         select:focus {
             outline: none;
             border-color: #2c9e9e;
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+            box-shadow: 0 0 0 3px rgba(22, 184, 184, 0.2);
         }
 
         .training-display {
@@ -107,7 +107,6 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            min-height: 300px;
         }
 
         .training-header {
@@ -117,6 +116,10 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
+        }
+
+        .training-info {
+            flex: 1;
         }
 
         .training-period {
@@ -159,22 +162,6 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .training-box {
-            background-color: #f5f5f5;
-            padding: 30px;
-            border-radius: 10px;
-            font-size: 1.8em;
-            font-weight: 500;
-            line-height: 1.6;
-            max-width: 700px;
-            width: 100%;
-            border-left: 5px solid #2c9e9e;
-            margin-bottom: 30px;
         }
 
         .welcome-box {
@@ -193,34 +180,97 @@
             margin: 0 auto 15px;
         }
 
-        .training-notes {
-            background-color: #FFF8E1;
-            border-left: 5px solid #FFC107;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-            display: none;
+        .training-box {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
         }
 
-        .training-notes h3 {
-            color: #F57F17;
-            margin-bottom: 10px;
+        .training-summary {
+            font-size: 1.8em;
             font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #16b8b8;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .training-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            font-size: 1.2em;
+            color: #16b8b8;
+        }
+
+        .section-content {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .objective-box {
+            background-color: #E3F2FD;
+            border-left: 5px solid #2196F3;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .objective-header {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #0D47A1;
         }
 
         .pace-info {
-            background-color: #E3F2FD;
-            border-left: 5px solid #2196F3;
-            padding: 20px;
+            background-color: #E8F5E9;
+            border-left: 5px solid #4CAF50;
+            padding: 15px 20px;
             border-radius: 8px;
-            margin-top: 20px;
-            font-size: 0.9em;
+            margin-top: 15px;
         }
 
-        .pace-info h3 {
-            color: #0D47A1;
-            margin-bottom: 10px;
+        .pace-header {
             font-weight: 600;
+            margin-bottom: 5px;
+            color: #2E7D32;
+        }
+
+        .training-notes {
+            background-color: #FFF8E1;
+            border-left: 5px solid #FFC107;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .notes-header {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #F57F17;
         }
 
         footer {
@@ -246,9 +296,12 @@
                 padding: 20px;
             }
 
-            .training-box {
+            .training-summary {
                 font-size: 1.4em;
-                padding: 20px;
+            }
+
+            .training-section {
+                padding: 15px;
             }
         }
 
@@ -327,7 +380,8 @@
                     </div>
 
                     <button class="print-btn" onclick="window.print()">
-                        <svg class="print-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="print-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 6 2 18 2 18 9"></polyline>
                             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                             <rect x="6" y="14" width="12" height="8"></rect>
@@ -337,16 +391,69 @@
                 </div>
 
                 <div class="training-content">
-                    <div class="training-box" id="training-box"></div>
-
-                    <div class="pace-info" id="pace-info" style="display: none;">
-                        <h3>Informações de Ritmo</h3>
-                        <p id="pace-content"></p>
+                    <div class="training-summary" id="training-summary">
+                        <!-- Resumo do treino será inserido aqui -->
                     </div>
 
-                    <div class="training-notes" id="training-notes">
-                        <h3>Notas</h3>
-                        <p id="notes-content"></p>
+                    <div class="training-box">
+                        <div class="training-section" id="warmup-section">
+                            <div class="section-header">
+                                <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="#16b8b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                                <div class="section-title">Aquecimento</div>
+                            </div>
+                            <div class="section-content" id="warmup-content">
+                                <!-- Conteúdo do aquecimento será inserido aqui -->
+                            </div>
+                        </div>
+
+                        <div class="training-section" id="main-section">
+                            <div class="section-header">
+                                <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="#16b8b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <div class="section-title">Principal</div>
+                            </div>
+                            <div class="section-content" id="main-content">
+                                <!-- Conteúdo principal será inserido aqui -->
+                            </div>
+                        </div>
+
+                        <div class="training-section" id="cooldown-section">
+                            <div class="section-header">
+                                <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="#16b8b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                                </svg>
+                                <div class="section-title">Desaquecimento</div>
+                            </div>
+                            <div class="section-content" id="cooldown-content">
+                                <!-- Conteúdo do desaquecimento será inserido aqui -->
+                            </div>
+                        </div>
+
+                        <div class="objective-box" id="objective-box" style="display: none;">
+                            <div class="objective-header">Objetivo:</div>
+                            <div id="objective-content"></div>
+                        </div>
+
+                        <div class="pace-info" id="pace-info" style="display: none;">
+                            <div class="pace-header">Informações de Ritmo:</div>
+                            <div id="pace-content"></div>
+                        </div>
+
+                        <div class="training-notes" id="training-notes" style="display: none;">
+                            <div class="notes-header">Notas:</div>
+                            <div id="notes-content"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -358,39 +465,245 @@
     </footer>
 
     <script>
-        // Dados dos treinos
+        // Dados estruturados dos treinos
         const trainingData = [
-            { week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Terça", training: "1.5 km trote + 8×400 m @5:40–5:45 (R200 m) + 10' trote", notes: "", paceInfo: "" },
-            { week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Quinta", training: "1.5 km trote + 6 km prog 6:40→6:20 + 1 km trote", notes: "", paceInfo: "" },
-            { week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Sábado", training: "12 km easy + 4×100 m strides", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+            {
+                week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Terça",
+                summary: "8×400 m @5:40–5:45 (R200 m)",
+                warmup: "1.5 km trote",
+                main: "8 repetições de 400 m @5:40–5:45 com recuperação de 200 m",
+                cooldown: "10 minutos de trote",
+                objective: "Desenvolver velocidade e ritmo específico para a prova",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Quinta",
+                summary: "6 km progressivo 6:40→6:20",
+                warmup: "1.5 km trote",
+                main: "6 km progressivo começando em 6:40/km e terminando em 6:20/km",
+                cooldown: "1 km trote",
+                objective: "Desenvolver resistência aeróbia e capacidade de aumentar ritmo durante o esforço",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Sábado",
+                summary: "12 km easy + 4×100 m strides",
+                warmup: "2 km leve",
+                main: "10 km easy",
+                cooldown: "4×100 m strides",
+                objective: "Desenvolver base aeróbia e resistência",
+                notes: "",
+                paceInfo: "easy (~7:00/km, FC < 150 bpm)"
+            },
 
-            { week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Terça", training: "10×400 m @5:40–5:45 (R200 m)", notes: "", paceInfo: "" },
-            { week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Quinta", training: "8 km com 4 km tempo 6:10/km", notes: "", paceInfo: "" },
-            { week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Sábado", training: "14 km easy + strides", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+            {
+                week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Terça",
+                summary: "10×400 m @5:40–5:45 (R200 m)",
+                warmup: "1.5 km trote",
+                main: "10 repetições de 400 m @5:40–5:45 com recuperação de 200 m",
+                cooldown: "10 minutos de trote",
+                objective: "Desenvolver velocidade e resistência anaeróbia",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Quinta",
+                summary: "8 km com 4 km tempo 6:10/km",
+                warmup: "2 km trote",
+                main: "4 km em ritmo de tempo (6:10/km)",
+                cooldown: "2 km trote",
+                objective: "Desenvolver ritmo de corrida sustentável e limiar anaeróbio",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Sábado",
+                summary: "14 km easy + strides",
+                warmup: "2 km leve",
+                main: "12 km easy",
+                cooldown: "Strides (acelerações curtas)",
+                objective: "Aumentar a quilometragem semanal e desenvolver base aeróbia",
+                notes: "",
+                paceInfo: "easy (~7:00/km, FC < 150 bpm)"
+            },
 
-            { week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Terça", training: "10×400 m @5:40–5:45", notes: "", paceInfo: "" },
-            { week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Quinta", training: "8 km com 4 km tempo", notes: "", paceInfo: "" },
-            { week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Sábado", training: "16 km easy (últ. 2 km 6:35)", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+            {
+                week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Terça",
+                summary: "10×400 m @5:40–5:45",
+                warmup: "1.5 km trote",
+                main: "10 repetições de 400 m @5:40–5:45",
+                cooldown: "10 minutos de trote",
+                objective: "Manter desenvolvimento de velocidade e ritmo específico",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Quinta",
+                summary: "8 km com 4 km tempo",
+                warmup: "2 km trote",
+                main: "4 km em ritmo de tempo",
+                cooldown: "2 km trote",
+                objective: "Continuar desenvolvimento do limiar anaeróbio",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Sábado",
+                summary: "16 km easy (últ. 2 km 6:35)",
+                warmup: "2 km leve",
+                main: "14 km easy com últimos 2 km a 6:35/km",
+                cooldown: "500m muito leve",
+                objective: "Aumentar volume e trabalhar com fadiga no final",
+                notes: "",
+                paceInfo: "easy (~7:00/km, FC < 150 bpm)"
+            },
 
-            { week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Terça", training: "6 km easy", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
-            { week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Quinta", training: "Fartlek 1' forte /1' trote ×10 (total 7 km)", notes: "Este é um treino de intervalos que alterna entre alta intensidade e baixa intensidade.", paceInfo: "" },
-            { week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Sábado", training: "13 km very‑easy", notes: "", paceInfo: "very-easy (mais lento que 7:00/km, FC < 140 bpm)" },
+            {
+                week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Terça",
+                summary: "6 km easy",
+                warmup: "1 km leve",
+                main: "5 km easy",
+                cooldown: "Alongamentos",
+                objective: "Recuperação ativa e manutenção da base aeróbia",
+                notes: "",
+                paceInfo: "easy (~7:00/km, FC < 150 bpm)"
+            },
+            {
+                week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Quinta",
+                summary: "Fartlek 1' forte /1' trote ×10 (total 7 km)",
+                warmup: "1.5 km trote",
+                main: "10 repetições alternando 1 minuto forte e 1 minuto trote",
+                cooldown: "1.5 km trote",
+                objective: "Desenvolver adaptação cardiovascular e variação de ritmo",
+                notes: "Este é um treino de intervalos que alterna entre alta intensidade e baixa intensidade.",
+                paceInfo: ""
+            },
+            {
+                week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Sábado",
+                summary: "13 km very‑easy",
+                warmup: "1 km muito leve",
+                main: "12 km very-easy",
+                cooldown: "Alongamentos",
+                objective: "Recuperação ativa e volume controlado",
+                notes: "",
+                paceInfo: "very-easy (mais lento que 7:00/km, FC < 140 bpm)"
+            },
 
-            { week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Terça", training: "1.5 km trote + 6×800 m @5:40 (R400 m) + 10' trote", notes: "", paceInfo: "" },
-            { week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Quinta", training: "2 km trote + 5 km tempo 6:10 + 1 km trote", notes: "", paceInfo: "" },
-            { week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Sábado", training: "17 km (14 km easy + 3 km 6:30)", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+            {
+                week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Terça",
+                summary: "6×800 m @5:40 (R400 m)",
+                warmup: "1.5 km trote",
+                main: "6 repetições de 800 m a 5:40/km com recuperação de 400 m",
+                cooldown: "10 minutos de trote",
+                objective: "Desenvolver resistência anaeróbia com intervalos mais longos",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Quinta",
+                summary: "5 km tempo 6:10",
+                warmup: "2 km trote",
+                main: "5 km em ritmo de tempo (6:10/km)",
+                cooldown: "1 km trote",
+                objective: "Trabalhar o limiar anaeróbio por uma distância mais longa",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Sábado",
+                summary: "17 km (14 km easy + 3 km 6:30)",
+                warmup: "1 km leve",
+                main: "14 km easy seguidos de 3 km a 6:30/km",
+                cooldown: "Alongamentos e caminhada",
+                objective: "Desenvolver resistência com mudança de ritmo no final",
+                notes: "",
+                paceInfo: "easy (~7:00/km, FC < 150 bpm)"
+            },
 
-            { week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Terça", training: "6×800 m @5:40 (R400 m)", notes: "", paceInfo: "" },
-            { week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Quinta", training: "2×3 km tempo 6:10 dentro 9 km", notes: "", paceInfo: "" },
-            { week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Sábado", training: "18 km easy", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+            {
+                week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Terça",
+                summary: "6×800 m @5:40 (R400 m)",
+                warmup: "1.5 km trote",
+                main: "6 repetições de 800 m a 5:40/km com recuperação de 400 m",
+                cooldown: "1 km trote",
+                objective: "Continuar desenvolvendo resistência anaeróbia",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Quinta",
+                summary: "2×3 km tempo 6:10 dentro 9 km",
+                warmup: "1.5 km trote",
+                main: "2 blocos de 3 km a 6:10/km com 1 km de recuperação entre eles",
+                cooldown: "1.5 km trote",
+                objective: "Desenvolver resistência em ritmo próximo do ritmo da prova",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Sábado",
+                summary: "18 km easy",
+                warmup: "1 km leve",
+                main: "17 km easy",
+                cooldown: "Alongamentos e caminhada",
+                objective: "Aumentar a distância do treino longo para desenvolver resistência",
+                notes: "",
+                paceInfo: "easy (~7:00/km, FC < 150 bpm)"
+            },
 
-            { week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Terça", training: "5×1 km @5:50 (R400 m)", notes: "", paceInfo: "" },
-            { week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Quinta", training: "Tempo contínuo 6 km 6:08/km", notes: "", paceInfo: "" },
-            { week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Sábado", training: "19 km (pico base)", notes: "Este é o pico de quilometragem da base. Um treino fundamental para desenvolver sua resistência.", paceInfo: "Mantenha ritmo easy (~7:00/km, FC < 150 bpm)" },
+            {
+                week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Terça",
+                summary: "5×1 km @5:50 (R400 m)",
+                warmup: "1.5 km trote",
+                main: "5 repetições de 1 km a 5:50/km com recuperação de 400 m",
+                cooldown: "1 km trote",
+                objective: "Trabalhar em ritmo próximo ao da prova e desenvolver resistência específica",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Quinta",
+                summary: "Tempo contínuo 6 km 6:08/km",
+                warmup: "2 km trote",
+                main: "6 km contínuos a 6:08/km",
+                cooldown: "1 km trote",
+                objective: "Simulação do ritmo da prova em distância controlada",
+                notes: "",
+                paceInfo: ""
+            },
+            {
+                week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Sábado",
+                summary: "19 km (pico base)",
+                warmup: "1 km leve",
+                main: "18 km em ritmo easy",
+                cooldown: "Alongamentos e caminhada",
+                objective: "Atingir o pico de quilometragem da fase de base",
+                notes: "Este é o pico de quilometragem da base. Um treino fundamental para desenvolver sua resistência.",
+                paceInfo: "Mantenha ritmo easy (~7:00/km, FC < 150 bpm)"
+            },
 
-            { week: "8", weekLabel: "Semana 8 (17/6–23/6)", day: "Terça", training: "6 km easy", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
-            { week: "8", weekLabel: "Semana 8 (17/6–23/6)", day: "Quinta", training: "Teste 5 km all‑out (pace alvo 5:55–6:00)", notes: "Este teste serve para avaliar sua forma atual e definir o ritmo para a prova.", paceInfo: "" },
-            { week: "8", weekLabel: "Semana 8 (17/6–23/6)", day: "Sábado", training: "12 km reg + 6×100 m strides", notes: "", paceInfo: "" }
+            {
+                week: "8", weekLabel: "Semana 8 (17/6–23/6)", day: "Quinta",
+                summary: "Teste 5 km all‑out (pace alvo 5:55–6:00)",
+                warmup: "2 km trote progressivo",
+                main: "5 km all-out (máximo esforço) com ritmo alvo entre 5:55 e 6:00/km",
+                cooldown: "2 km trote muito leve",
+                objective: "Avaliar a forma atual e definir o ritmo para a prova",
+                notes: "Este teste serve para avaliar sua forma atual e definir o ritmo para a prova.",
+                paceInfo: ""
+            },
+            {
+                week: "8", weekLabel: "Semana 8 (17/6–23/6)", day: "Sábado",
+                summary: "12 km reg + 6×100 m strides",
+                warmup: "1 km leve",
+                main: "12 km em ritmo regular",
+                cooldown: "6 repetições de 100 m em strides (acelerações progressivas)",
+                objective: "Manter volume com qualidade e trabalhar velocidade nas strides",
+                notes: "",
+                paceInfo: ""
+            }
         ];
 
         // Elementos do DOM
@@ -400,11 +713,16 @@
         const trainingContent = document.getElementById('training-content');
         const trainingPeriod = document.getElementById('training-period');
         const trainingDay = document.getElementById('training-day');
-        const trainingBox = document.getElementById('training-box');
-        const trainingNotes = document.getElementById('training-notes');
-        const notesContent = document.getElementById('notes-content');
+        const trainingSummary = document.getElementById('training-summary');
+        const warmupContent = document.getElementById('warmup-content');
+        const mainContent = document.getElementById('main-content');
+        const cooldownContent = document.getElementById('cooldown-content');
+        const objectiveBox = document.getElementById('objective-box');
+        const objectiveContent = document.getElementById('objective-content');
         const paceInfo = document.getElementById('pace-info');
         const paceContent = document.getElementById('pace-content');
+        const trainingNotes = document.getElementById('training-notes');
+        const notesContent = document.getElementById('notes-content');
 
         // Event listener para seleção de semana
         weekSelect.addEventListener('change', function () {
@@ -439,7 +757,22 @@
                     // Atualizar os elementos de informação do treino
                     trainingPeriod.textContent = selectedTraining.weekLabel;
                     trainingDay.textContent = selectedTraining.day;
-                    trainingBox.textContent = selectedTraining.training;
+
+                    // Exibir o resumo do treino
+                    trainingSummary.textContent = selectedTraining.summary;
+
+                    // Exibir detalhes das seções do treino
+                    warmupContent.textContent = selectedTraining.warmup;
+                    mainContent.textContent = selectedTraining.main;
+                    cooldownContent.textContent = selectedTraining.cooldown;
+
+                    // Exibir objetivo se disponível
+                    if (selectedTraining.objective && selectedTraining.objective.trim() !== '') {
+                        objectiveBox.style.display = 'block';
+                        objectiveContent.textContent = selectedTraining.objective;
+                    } else {
+                        objectiveBox.style.display = 'none';
+                    }
 
                     // Exibir notas se disponíveis
                     if (selectedTraining.notes && selectedTraining.notes.trim() !== '') {
