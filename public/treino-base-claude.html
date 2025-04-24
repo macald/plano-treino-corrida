@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Treinos Meia Maratona - Abril a Junho 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f0f4f0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #16b8b8;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .selectors-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .selector-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .selector-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #16b8b8;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E7D32' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #2c9e9e;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        .training-display {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+        }
+
+        .training-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .training-period {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #16b8b8;
+        }
+
+        .training-day {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #526464;
+        }
+
+        .print-btn {
+            background-color: #2c9e9e;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .print-btn:hover {
+            background-color: #16b8b8;
+        }
+
+        .print-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .training-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .training-box {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 1.8em;
+            font-weight: 500;
+            line-height: 1.6;
+            max-width: 700px;
+            width: 100%;
+            border-left: 5px solid #2c9e9e;
+            margin-bottom: 30px;
+        }
+
+        .welcome-box {
+            text-align: center;
+            padding: 30px;
+            color: #757575;
+        }
+
+        .welcome-box h2 {
+            color: #16b8b8;
+            margin-bottom: 20px;
+        }
+
+        .welcome-box p {
+            max-width: 600px;
+            margin: 0 auto 15px;
+        }
+
+        .training-notes {
+            background-color: #FFF8E1;
+            border-left: 5px solid #FFC107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .training-notes h3 {
+            color: #F57F17;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .pace-info {
+            background-color: #E3F2FD;
+            border-left: 5px solid #2196F3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .pace-info h3 {
+            color: #0D47A1;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 40px;
+            color: #757575;
+            font-size: 0.9em;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .app-container {
+                padding: 15px;
+            }
+
+            .selectors-container {
+                padding: 20px;
+            }
+
+            .training-display {
+                padding: 20px;
+            }
+
+            .training-box {
+                font-size: 1.4em;
+                padding: 20px;
+            }
+        }
+
+        @media print {
+
+            header,
+            .selectors-container,
+            .print-btn,
+            footer {
+                display: none;
+            }
+
+            body,
+            .app-container,
+            .training-display {
+                padding: 0;
+                margin: 0;
+                background: white;
+                box-shadow: none;
+            }
+
+            .training-display {
+                border: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Treinos Base Meia Maratona</h1>
+        <div class="subtitle">29 de Abril a 23 de Junho, 2025</div>
+    </header>
+
+    <div class="app-container">
+        <div class="selectors-container">
+            <div class="selector-group">
+                <label for="week-select" class="selector-label">Selecione a Semana</label>
+                <select id="week-select">
+                    <option value="" selected disabled>Escolha uma semana</option>
+                    <option value="1">Semana 1 (29/4–5/5)</option>
+                    <option value="2">Semana 2 (6/5–12/5)</option>
+                    <option value="3">Semana 3 (13/5–19/5)</option>
+                    <option value="4">Semana 4 (20/5–26/5)</option>
+                    <option value="5">Semana 5 (27/5–2/6)</option>
+                    <option value="6">Semana 6 (3/6–9/6)</option>
+                    <option value="7">Semana 7 (10/6–16/6)</option>
+                    <option value="8">Semana 8 (17/6–23/6)</option>
+                </select>
+            </div>
+
+            <div class="selector-group">
+                <label for="day-select" class="selector-label">Selecione o Dia</label>
+                <select id="day-select" disabled>
+                    <option value="" selected disabled>Escolha um dia</option>
+                    <option value="Terça">Terça</option>
+                    <option value="Quinta">Quinta</option>
+                    <option value="Sábado">Sábado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="training-display">
+            <div id="welcome-content" class="welcome-box">
+                <h2>Plano de Treino para Meia Maratona</h2>
+                <p>Selecione uma semana e um dia nos menus acima para visualizar os detalhes do treino.</p>
+                <p>Este plano de treino foi desenvolvido para prepará-lo adequadamente para uma meia maratona.</p>
+            </div>
+
+            <div id="training-content" style="display: none;">
+                <div class="training-header">
+                    <div class="training-info">
+                        <div class="training-period" id="training-period"></div>
+                        <div class="training-day" id="training-day"></div>
+                    </div>
+
+                    <button class="print-btn" onclick="window.print()">
+                        <svg class="print-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        Imprimir
+                    </button>
+                </div>
+
+                <div class="training-content">
+                    <div class="training-box" id="training-box"></div>
+
+                    <div class="pace-info" id="pace-info" style="display: none;">
+                        <h3>Informações de Ritmo</h3>
+                        <p id="pace-content"></p>
+                    </div>
+
+                    <div class="training-notes" id="training-notes">
+                        <h3>Notas</h3>
+                        <p id="notes-content"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plano de Treino Base para Meia Maratona | 2025</p>
+    </footer>
+
+    <script>
+        // Dados dos treinos
+        const trainingData = [
+            { week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Terça", training: "1.5 km trote + 8×400 m @5:40–5:45 (R200 m) + 10' trote", notes: "", paceInfo: "" },
+            { week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Quinta", training: "1.5 km trote + 6 km prog 6:40→6:20 + 1 km trote", notes: "", paceInfo: "" },
+            { week: "1", weekLabel: "Semana 1 (29/4–5/5)", day: "Sábado", training: "12 km easy + 4×100 m strides", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+
+            { week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Terça", training: "10×400 m @5:40–5:45 (R200 m)", notes: "", paceInfo: "" },
+            { week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Quinta", training: "8 km com 4 km tempo 6:10/km", notes: "", paceInfo: "" },
+            { week: "2", weekLabel: "Semana 2 (6/5–12/5)", day: "Sábado", training: "14 km easy + strides", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+
+            { week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Terça", training: "10×400 m @5:40–5:45", notes: "", paceInfo: "" },
+            { week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Quinta", training: "8 km com 4 km tempo", notes: "", paceInfo: "" },
+            { week: "3", weekLabel: "Semana 3 (13/5–19/5)", day: "Sábado", training: "16 km easy (últ. 2 km 6:35)", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+
+            { week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Terça", training: "6 km easy", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+            { week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Quinta", training: "Fartlek 1' forte /1' trote ×10 (total 7 km)", notes: "Este é um treino de intervalos que alterna entre alta intensidade e baixa intensidade.", paceInfo: "" },
+            { week: "4", weekLabel: "Semana 4 (20/5–26/5)", day: "Sábado", training: "13 km very‑easy", notes: "", paceInfo: "very-easy (mais lento que 7:00/km, FC < 140 bpm)" },
+
+            { week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Terça", training: "1.5 km trote + 6×800 m @5:40 (R400 m) + 10' trote", notes: "", paceInfo: "" },
+            { week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Quinta", training: "2 km trote + 5 km tempo 6:10 + 1 km trote", notes: "", paceInfo: "" },
+            { week: "5", weekLabel: "Semana 5 (27/5–2/6)", day: "Sábado", training: "17 km (14 km easy + 3 km 6:30)", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+
+            { week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Terça", training: "6×800 m @5:40 (R400 m)", notes: "", paceInfo: "" },
+            { week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Quinta", training: "2×3 km tempo 6:10 dentro 9 km", notes: "", paceInfo: "" },
+            { week: "6", weekLabel: "Semana 6 (3/6–9/6)", day: "Sábado", training: "18 km easy", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+
+            { week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Terça", training: "5×1 km @5:50 (R400 m)", notes: "", paceInfo: "" },
+            { week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Quinta", training: "Tempo contínuo 6 km 6:08/km", notes: "", paceInfo: "" },
+            { week: "7", weekLabel: "Semana 7 (10/6–16/6)", day: "Sábado", training: "19 km (pico base)", notes: "Este é o pico de quilometragem da base. Um treino fundamental para desenvolver sua resistência.", paceInfo: "Mantenha ritmo easy (~7:00/km, FC < 150 bpm)" },
+
+            { week: "8", weekLabel: "Semana 8 (17/6–23/6)", day: "Terça", training: "6 km easy", notes: "", paceInfo: "easy (~7:00/km, FC < 150 bpm)" },
+            { week: "8", weekLabel: "Semana 8 (17/6–23/6)", day: "Quinta", training: "Teste 5 km all‑out (pace alvo 5:55–6:00)", notes: "Este teste serve para avaliar sua forma atual e definir o ritmo para a prova.", paceInfo: "" },
+            { week: "8", weekLabel: "Semana 8 (17/6–23/6)", day: "Sábado", training: "12 km reg + 6×100 m strides", notes: "", paceInfo: "" }
+        ];
+
+        // Elementos do DOM
+        const weekSelect = document.getElementById('week-select');
+        const daySelect = document.getElementById('day-select');
+        const welcomeContent = document.getElementById('welcome-content');
+        const trainingContent = document.getElementById('training-content');
+        const trainingPeriod = document.getElementById('training-period');
+        const trainingDay = document.getElementById('training-day');
+        const trainingBox = document.getElementById('training-box');
+        const trainingNotes = document.getElementById('training-notes');
+        const notesContent = document.getElementById('notes-content');
+        const paceInfo = document.getElementById('pace-info');
+        const paceContent = document.getElementById('pace-content');
+
+        // Event listener para seleção de semana
+        weekSelect.addEventListener('change', function () {
+            // Habilitar a seleção de dia
+            daySelect.disabled = false;
+
+            // Resetar a seleção de dia
+            daySelect.value = "";
+
+            // Ocultar o conteúdo do treino e mostrar a mensagem de boas-vindas
+            welcomeContent.style.display = 'block';
+            trainingContent.style.display = 'none';
+        });
+
+        // Event listener para seleção de dia
+        daySelect.addEventListener('change', function () {
+            const selectedWeek = weekSelect.value;
+            const selectedDay = daySelect.value;
+
+            if (selectedWeek && selectedDay) {
+                // Encontrar o treino correspondente
+                const selectedTraining = trainingData.find(training =>
+                    training.week === selectedWeek && training.day === selectedDay
+                );
+
+                // Atualizar a exibição do treino
+                if (selectedTraining) {
+                    // Ocultar a mensagem de boas-vindas e mostrar o conteúdo do treino
+                    welcomeContent.style.display = 'none';
+                    trainingContent.style.display = 'block';
+
+                    // Atualizar os elementos de informação do treino
+                    trainingPeriod.textContent = selectedTraining.weekLabel;
+                    trainingDay.textContent = selectedTraining.day;
+                    trainingBox.textContent = selectedTraining.training;
+
+                    // Exibir notas se disponíveis
+                    if (selectedTraining.notes && selectedTraining.notes.trim() !== '') {
+                        trainingNotes.style.display = 'block';
+                        notesContent.textContent = selectedTraining.notes;
+                    } else {
+                        trainingNotes.style.display = 'none';
+                    }
+
+                    // Exibir informações de ritmo se disponíveis
+                    if (selectedTraining.paceInfo && selectedTraining.paceInfo.trim() !== '') {
+                        paceInfo.style.display = 'block';
+                        paceContent.textContent = selectedTraining.paceInfo;
+                    } else {
+                        paceInfo.style.display = 'none';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
