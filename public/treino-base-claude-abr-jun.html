@@ -343,6 +343,14 @@
                 <label for="week-select" class="selector-label">Selecione a Semana</label>
                 <select id="week-select">
                     <option value="" selected disabled>Escolha uma semana</option>
+                    <option value="1">Semana 1 (29/4–5/5)</option>
+                    <option value="2">Semana 2 (6/5–12/5)</option>
+                    <option value="3">Semana 3 (13/5–19/5)</option>
+                    <option value="4">Semana 4 (20/5–26/5)</option>
+                    <option value="5">Semana 5 (27/5–2/6)</option>
+                    <option value="6">Semana 6 (3/6–9/6)</option>
+                    <option value="7">Semana 7 (10/6–16/6)</option>
+                    <option value="8">Semana 8 (17/6–23/6)</option>
                 </select>
             </div>
 
@@ -350,6 +358,9 @@
                 <label for="day-select" class="selector-label">Selecione o Dia</label>
                 <select id="day-select" disabled>
                     <option value="" selected disabled>Escolha um dia</option>
+                    <option value="Terça">Terça</option>
+                    <option value="Quinta">Quinta</option>
+                    <option value="Sábado">Sábado</option>
                 </select>
             </div>
         </div>
@@ -371,7 +382,7 @@
                         <svg class="print-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 6 2 18 2 18 9"></polyline>
-                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2 2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                             <rect x="6" y="14" width="12" height="8"></rect>
                         </svg>
                         Imprimir
@@ -485,6 +496,7 @@
                 notes: "Mantenha ritmo confortável, similar aos seus treinos de 7:00-7:20/km",
                 paceInfo: "easy (~7:10/km, FC < 150 bpm)"
             },
+
             {
                 week: "2", weekLabel: "Semana 2 (3/6–9/6)", day: "Terça",
                 summary: "10×400 m @5:40–5:50 (R200 m)",
@@ -515,6 +527,7 @@
                 notes: "Baseado na sua distância máxima atual de 10 km, progredindo gradualmente",
                 paceInfo: "easy (~7:10/km, FC < 150 bpm)"
             },
+
             {
                 week: "3", weekLabel: "Semana 3 (10/6–16/6)", day: "Terça",
                 summary: "6×600 m @5:45–5:55 (R300 m)",
@@ -545,6 +558,7 @@
                 notes: "Simulando acelerar no final da corrida quando já há fadiga acumulada",
                 paceInfo: "easy (~7:10/km, FC < 150 bpm) + finish em 6:35/km"
             },
+
             {
                 week: "4", weekLabel: "Semana 4 (17/6–23/6)", day: "Terça",
                 summary: "5×800 m @5:50–6:00 (R400 m)",
@@ -575,6 +589,7 @@
                 notes: "Semana de recuperação antes de intensificar novamente o treino",
                 paceInfo: "very-easy (7:30/km+, FC < 140 bpm)"
             },
+
             {
                 week: "5", weekLabel: "Semana 5 (24/6–30/6)", day: "Terça",
                 summary: "4×1000 m @5:55–6:05 (R400 m)",
@@ -605,6 +620,7 @@
                 notes: "Preparação mental e física para sustentar ritmo quando já há cansaço",
                 paceInfo: "easy (~7:10/km) + finish em pace próximo ao de prova"
             },
+
             {
                 week: "6", weekLabel: "Semana 6 (1/7–7/7)", day: "Terça",
                 summary: "5×800 m @5:45–5:55 (R300 m)",
@@ -635,6 +651,7 @@
                 notes: "Volume controlado para não acumular fadiga excessiva",
                 paceInfo: "easy (~7:10/km, FC < 150 bpm)"
             },
+
             {
                 week: "7", weekLabel: "Semana 7 (8/7–14/7)", day: "Terça",
                 summary: "3×1500 m @6:00 (R600 m)",
@@ -665,6 +682,7 @@
                 notes: "Último treino longo antes do período de polimento para prova",
                 paceInfo: "easy (~7:10/km, FC < 150 bpm)"
             },
+
             {
                 week: "8", weekLabel: "Semana 8 (15/7–21/7)", day: "Terça",
                 summary: "6×400 m @5:40 (R200 m)",
@@ -694,6 +712,37 @@
                 objective: "Manter ritmo com volume reduzido e trabalhar velocidade",
                 notes: "Volume reduzido para recuperação, mantendo estímulo de velocidade",
                 paceInfo: "easy (~7:20/km) + strides progressivos"
+            },
+
+            {
+                week: "9", weekLabel: "Semana 9 (22/7–28/7)", day: "Terça",
+                summary: "4×600 m @5:50 (R300 m)",
+                warmup: "1.5 km trote",
+                main: "4 repetições de 600 m a 5:50/km com recuperação de 300 m",
+                cooldown: "1.5 km trote",
+                objective: "Polimento com manutenção de velocidade específica",
+                notes: "Volume baixo, qualidade alta para chegar afiado na prova",
+                paceInfo: "Velocidade específica com volume reduzido"
+            },
+            {
+                week: "9", weekLabel: "Semana 9 (22/7–28/7)", day: "Quinta",
+                summary: "6 km easy + 4×150 m strides",
+                warmup: "1 km leve",
+                main: "5 km easy",
+                cooldown: "4×150 m strides",
+                objective: "Recuperação ativa com estímulo neuromuscular",
+                notes: "Treino leve para manter movimento sem fadiga",
+                paceInfo: "easy (~7:20/km) com strides controlados"
+            },
+            {
+                week: "9", weekLabel: "Semana 9 (22/7–28/7)", day: "Domingo",
+                summary: "PROVA 10K - Pace alvo 6:00/km",
+                warmup: "15 minutos trote + 4×100 m strides + alongamentos",
+                main: "10K - Estratégia: 1º km (6:10/km), km 2-8 (5:55-6:05/km), últimos 2 km (5:50/km ou melhor se possível)",
+                cooldown: "10 minutos caminhada + alongamentos",
+                objective: "Completar 10K no melhor tempo possível",
+                notes: "Com base na sua evolução, o objetivo é quebrar a barreira dos 60 minutos (sub-6:00/km)",
+                paceInfo: "Objetivo: terminar entre 58:00-60:00"
             }
         ];
 
@@ -715,64 +764,10 @@
         const trainingNotes = document.getElementById('training-notes');
         const notesContent = document.getElementById('notes-content');
 
-        // Função para carregar as semanas disponíveis dinamicamente
-        function loadAvailableWeeks() {
-            // Extrair semanas únicas do trainingData
-            const uniqueWeeks = [...new Set(trainingData.map(training => training.week))];
-
-            // Ordenar as semanas numericamente
-            uniqueWeeks.sort((a, b) => parseInt(a) - parseInt(b));
-
-            // Para cada semana única, encontrar o weekLabel correspondente
-            uniqueWeeks.forEach(week => {
-                const weekData = trainingData.find(training => training.week === week);
-                if (weekData) {
-                    const option = document.createElement('option');
-                    option.value = week;
-                    option.textContent = weekData.weekLabel;
-                    weekSelect.appendChild(option);
-                }
-            });
-        }
-
-        // Função para carregar os dias disponíveis para uma semana específica
-        function loadAvailableDays(selectedWeek) {
-            // Limpar opções anteriores (manter apenas a primeira)
-            daySelect.innerHTML = '<option value="" selected disabled>Escolha um dia</option>';
-
-            // Filtrar os dias disponíveis para a semana selecionada
-            const availableDays = trainingData
-                .filter(training => training.week === selectedWeek)
-                .map(training => training.day);
-
-            // Remover duplicatas e ordenar
-            const uniqueDays = [...new Set(availableDays)];
-            const dayOrder = ['Terça', 'Quinta', 'Sábado', 'Domingo'];
-            uniqueDays.sort((a, b) => dayOrder.indexOf(a) - dayOrder.indexOf(b));
-
-            // Adicionar as opções ao select
-            uniqueDays.forEach(day => {
-                const option = document.createElement('option');
-                option.value = day;
-                option.textContent = day;
-                daySelect.appendChild(option);
-            });
-        }
-
         // Event listener para seleção de semana
         weekSelect.addEventListener('change', function () {
-            const selectedWeek = this.value;
-
-            if (selectedWeek) {
-                // Habilitar a seleção de dia
-                daySelect.disabled = false;
-
-                // Carregar os dias disponíveis para esta semana
-                loadAvailableDays(selectedWeek);
-            } else {
-                // Desabilitar a seleção de dia
-                daySelect.disabled = true;
-            }
+            // Habilitar a seleção de dia
+            daySelect.disabled = false;
 
             // Resetar a seleção de dia
             daySelect.value = "";
@@ -836,11 +831,6 @@
                     }
                 }
             }
-        });
-
-        // Carregar as semanas disponíveis quando a página carregar
-        document.addEventListener('DOMContentLoaded', function () {
-            loadAvailableWeeks();
         });
     </script>
 </body>
